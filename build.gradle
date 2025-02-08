@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'me.shae'
+version = '1.0-SNAPSHOT'
+
+application {
+    mainClassName = 'me.shae.Main'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'me.shae.Main'
+    }
+}
+
+shadowJar {
+    mergeServiceFiles()
+}
